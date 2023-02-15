@@ -1,0 +1,21 @@
+import openai
+import os
+
+# Set up the OpenAI API key
+openai.api_key = os.environ["OPENAI_API_KEY"]
+
+# Define the prompt
+prompt = "Hello, ChatGPT! Can you generate some text for me?"
+
+# Generate text with the prompt using the OpenAI API
+response = openai.Completion.create(
+  engine="text-davinci-002",
+  prompt=prompt,
+  max_tokens=1024,
+  n=1,
+  stop=None,
+  temperature=0.5,
+)
+
+# Print the generated text
+print(response.choices[0].text)
