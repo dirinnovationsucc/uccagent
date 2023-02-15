@@ -1,0 +1,16 @@
+﻿#!/bin/bash
+
+
+# Define the Git repository URL and branch name
+REPO_URL="https://github.com/your/repo.git"
+BRANCH_NAME="main"
+
+
+# Loop indefinitely
+while true; do
+  # Pull the latest changes from the Git repository
+  git pull $REPO_URL $BRANCH_NAME
+  
+  # Sleep for 10 seconds before pulling again
+  sleep 10
+done
